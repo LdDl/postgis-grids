@@ -1,4 +1,8 @@
-CREATE OR REPLACE FUNCTION make_triangle_grid(geom geometry, side_meters decimal)
+CREATE OR REPLACE FUNCTION make_triangle_grid(
+    geom geometry,
+    side_meters decimal,
+    use_envelope bool default false
+)
 RETURNS SETOF geometry AS $BODY$
 DECLARE
 	srid INTEGER := 3857;
